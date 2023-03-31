@@ -1,10 +1,36 @@
 
+var currentHour = dayjs().format('H');
 var today = dayjs();
-$('#currentDay').text(today.format('MMM D, YYYY'));
+ $('#currentDay').text(today.format('MMM D, YYYY'));
 
 
 
+$(function () {
+ 
 
+  
+  var timeBlocks = $(".time-block");
+
+  
+  timeBlocks.each(function () {
+    var hour = parseInt($(this).attr("data-hour"));
+    console.log(hour);
+    console.log(currentHour);
+    currentHour = parseInt(currentHour);
+    if (hour < currentHour) {
+      console.log("past");
+     
+      $(this).addClass("past");
+    } else if (hour === currentHour) {
+      console.log('present');
+      $(this).addClass("present");
+    } else {
+      console.log('future');
+      $(this).addClass("future");
+    }
+  });
+});
+  
 
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
@@ -23,7 +49,7 @@ $(function () {
                     "hour-14": "",
                     "hour-15": "",
                     "hour-16": "",
-                    "hour-17": "",}
+                    "hour-17": ""}
     localStorage.setItem('savedEvents', JSON.stringify(savedEvents));               
 
   } else {
@@ -57,6 +83,7 @@ $(function () {
   });
   
 
+
     // TODO: Add a listener for click events on the save button. This code should
     // use the id in the containing time-block as a key to save the user input in
     // local storage. HINT: What does `this` reference in the click listener
@@ -76,4 +103,5 @@ $(function () {
     //
     // TODO: Add code to display the current date in the header of the page.
   });
-  
+
+console.log(today.format('H'));
