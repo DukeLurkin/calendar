@@ -53,6 +53,6 @@ Please refer to license in the repo
 https://dukelurkin.github.io/quiz/
 
 ## Image
-![image](./quizScreenShot.png)
+![image](./calendarScreenShot.png)
 
 
