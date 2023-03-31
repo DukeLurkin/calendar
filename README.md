@@ -50,7 +50,7 @@ Lukas Durkin
 Please refer to license in the repo
 
 ## URL
-https://dukelurkin.github.io/quiz/
+https://dukelurkin.github.io/calendar/
 
 ## Image
 ![image](./calendarScreenShot.png)
